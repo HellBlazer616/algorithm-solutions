@@ -1,1 +1,5 @@
-.vscode/launch.json
+.vscode
+
+php/.idea
+
+php/.vscode
