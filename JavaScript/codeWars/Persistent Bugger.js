@@ -1,21 +1,19 @@
 'use strict';
 
 function persistence(num) {
-	let ans;
+	let numString = num.toString();
 	let count = 0;
-	function multi(number) {
+
+	while (numString.length !== 1) {
 		count++;
-		return String(number)
+		numString = numString
 			.split('')
 			.reduce((acc, value) => {
 				return (acc *= Number(value));
-			}, 1);
+			}, 1)
+			.toString();
 	}
-
-	while (String(ans).length !== 1) {
-		ans = multi(ans || num);
-	}
-	return String(num).length === 1 ? --count : count;
+	return count;
 }
 
-console.log(persistence(999));
+console.log(persistence(9));
